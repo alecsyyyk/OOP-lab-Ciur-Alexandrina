@@ -3,38 +3,45 @@
     "firstName": "Ana",
     "lastName": "Popescu",
     "email": "ana.popescu@student.utm.md",
-    "enrollmentDate": "2023-09-15",
-    "dateOfBirth": "2005-03-20",
+    "enrollmentDate": "2021-09-15",
+    "dateOfBirth": "2003-03-20",
+    "facultyName": "Computer Science",
     "graduated": true
   },
   {
     "firstName": "Ion",
     "lastName": "Ionescu",
     "email": "ion.ionescu@student.utm.md",
-    "enrollmentDate": "2024-09-01",
-    "dateOfBirth": "2006-07-14"
+    "enrollmentDate": "2021-09-01",
+    "dateOfBirth": "2003-07-14",
+    "facultyName": "Computer Science",
+    "graduated": true
   },
   {
     "firstName": "Maria",
     "lastName": "Dragomir",
     "email": "maria.dragomir@student.utm.md",
-    "enrollmentDate": "2023-09-15",
-    "dateOfBirth": "2005-11-08",
+    "enrollmentDate": "2021-09-15",
+    "dateOfBirth": "2003-11-08",
+    "facultyName": "Mechanical Engineering",
     "graduated": true
-  },
-  {
-    "firstName": "Andrei",
-    "lastName": "Stanciu",
-    "email": "andrei.stanciu@student.utm.md",
-    "enrollmentDate": "2024-02-10",
-    "dateOfBirth": "2006-01-25"
   },
   {
     "firstName": "Elena",
     "lastName": "Mihai",
     "email": "elena.mihai@student.utm.md",
-    "enrollmentDate": "2023-09-15",
-    "dateOfBirth": "2005-06-30",
+    "enrollmentDate": "2024-09-15",
+    "dateOfBirth": "2006-06-30",
+    "facultyName": "Computer Science",
+    "graduated": false
+  },
+  {
+    "firstName": "Vlad",
+    "lastName": "Munteanu",
+    "email": "vlad.munteanu@student.utm.md",
+    "enrollmentDate": "2024-09-01",
+    "dateOfBirth": "2006-08-27",
+    "facultyName": "Urbanism Architecture",
     "graduated": false
   }
 ]

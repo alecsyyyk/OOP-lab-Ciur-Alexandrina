@@ -5,7 +5,8 @@ public class Student {
     private String email;
     private String enrollmentDate;  
     private String dateOfBirth;
-    private boolean isGraduated;  // Track if student has graduated     
+    private boolean isGraduated;  // Track if student has graduated
+    private String facultyName;   // Track which faculty student belongs to     
     
     public Student(String firstName, String lastName, String email, 
                    String enrollmentDate, String dateOfBirth) {
@@ -44,6 +45,14 @@ public class Student {
 
     public void setGraduated(boolean graduated) {
         isGraduated = graduated;
+    }
+
+    public String getFacultyName() {
+        return facultyName;
+    }
+
+    public void setFacultyName(String facultyName) {
+        this.facultyName = facultyName;
     }
 
     // change the information

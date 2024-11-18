@@ -17,6 +17,7 @@ public class Faculty {
 
     public void addStudent(Student student) {
         students.add(student);
+        student.setFacultyName(name);  // Set the faculty name on the student
     }
 
     public void removeStudent(Student student) {
