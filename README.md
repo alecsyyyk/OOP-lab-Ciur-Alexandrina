@@ -39,8 +39,8 @@ java MainApp
 
 Ciur Alxandrina
 
-## Course Information
+## Feedback/Code Review
 
-- **Course:** Object-Oriented Programming Lab 2
-- **Repository:** OOP-lab2-Ciur-Alxandrina
-- **Branch:** Lab2
+The code is generally following a good structure, having grasped a couple of base OOP principles like Encapsulation and Separation of Concerns
+Also the code features Reusability therefore could be used for a potential Lab3
+ultimately there's usage of public/private/private final which is a concept proven to be very useful when working with the OOP principles.

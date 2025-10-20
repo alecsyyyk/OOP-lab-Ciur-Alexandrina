@@ -57,12 +57,4 @@ public class AnalyticsDashboard {
     public String getTimePeriod() { return timePeriod; }
     public void setTimePeriod(String timePeriod) { this.timePeriod = timePeriod; }
 
-    // quick demo main so you can run this file directly
-    public static void main(String[] args) {
-        AnalyticsDashboard dash = new AnalyticsDashboard(120, 2500.50f, 34, "Q3 2025");
-        dash.generateReport();
-        dash.refreshData();
-        dash.displayMetrics();
-        dash.exportData();
-    }
 }
