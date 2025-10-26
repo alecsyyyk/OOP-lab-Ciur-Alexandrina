@@ -12,3 +12,5 @@ PROJECT_GUIDE.md
 # Ignore OS files
 .DS_Store
 Thumbs.db
+
+dashboard/
