@@ -1,0 +1,49 @@
+{
+  "aliens": [
+    {
+      "name": "Klingon",
+      "planet": "Qo'noS",
+      "universe": "Star Trek",
+      "abilities": ["Enhanced strength", "Warrior culture", "Honor-based society"],
+      "population": 8500000000,
+      "classification": "Humanoid",
+      "temperament": "Aggressive"
+    },
+    {
+      "name": "Wookiee",
+      "planet": "Kashyyyk",
+      "universe": "Star Wars",
+      "abilities": ["Great strength", "Expert mechanics", "Long lifespan"],
+      "population": 56000000,
+      "classification": "Mammalian",
+      "temperament": "Loyal"
+    },
+    {
+      "name": "Kryptonian",
+      "planet": "Krypton",
+      "universe": "DC Comics",
+      "abilities": ["Super strength", "Flight", "Heat vision", "Invulnerability"],
+      "population": 0,
+      "classification": "Humanoid",
+      "temperament": "Noble"
+    },
+    {
+      "name": "Vulcan",
+      "planet": "Vulcan",
+      "universe": "Star Trek",
+      "abilities": ["Logic mastery", "Mind meld", "Enhanced strength"],
+      "population": 6000000000,
+      "classification": "Humanoid",
+      "temperament": "Logical"
+    },
+    {
+      "name": "Yautja",
+      "planet": "Yautja Prime",
+      "universe": "Predator",
+      "abilities": ["Advanced technology", "Invisibility", "Superior hunting skills"],
+      "population": 2000000000,
+      "classification": "Reptilian-humanoid",
+      "temperament": "Hunter"
+    }
+  ]
+}
