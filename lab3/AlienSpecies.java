@@ -1,4 +1,4 @@
-﻿public class AlienSpecies {
+public class AlienSpecies {
     private String name;
     private String planet;
     private String universe;

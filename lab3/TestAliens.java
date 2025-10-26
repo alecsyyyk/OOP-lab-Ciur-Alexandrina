@@ -1,4 +1,4 @@
-﻿public class TestAliens {
+public class TestAliens {
     public static void main(String[] args) {
         System.out.println("=== Testing AlienSpecies ===\n");
         
