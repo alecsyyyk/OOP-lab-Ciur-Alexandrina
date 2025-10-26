@@ -1,4 +1,4 @@
-﻿package lab3;
+package lab3;
 public class AlienSpecies {
     private String name;
     private String planet;

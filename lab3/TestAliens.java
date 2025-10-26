@@ -1,4 +1,4 @@
-﻿package lab3;
+package lab3;
 public class TestAliens {
     public static void main(String[] args) {
         System.out.println("=== Testing AlienSpecies ===\n");
