@@ -34,9 +34,36 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.1.0</version>
-                <configuration>
-                    <mainClass>lab3.AlienDataLoader</mainClass>
-                </configuration>
+                <executions>
+                    <!-- Default: AlienDataLoader -->
+                    <execution>
+                        <id>default</id>
+                        <configuration>
+                            <mainClass>lab3.AlienDataLoader</mainClass>
+                        </configuration>
+                    </execution>
+                    <!-- TestClassification -->
+                    <execution>
+                        <id>test</id>
+                        <configuration>
+                            <mainClass>lab3.TestClassification</mainClass>
+                        </configuration>
+                    </execution>
+                    <!-- AlienDemo -->
+                    <execution>
+                        <id>demo</id>
+                        <configuration>
+                            <mainClass>lab3.AlienDemo</mainClass>
+                        </configuration>
+                    </execution>
+                    <!-- AlienDataLoader -->
+                    <execution>
+                        <id>loader</id>
+                        <configuration>
+                            <mainClass>lab3.AlienDataLoader</mainClass>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

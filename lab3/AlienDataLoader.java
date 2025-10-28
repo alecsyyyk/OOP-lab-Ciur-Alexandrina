@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import java.util.Map;
 
 public class AlienDataLoader {
    
@@ -66,11 +67,11 @@ public class AlienDataLoader {
     
         public static void main(String[] args) {
         List<AlienSpecies> aliens = loadAliens("aliens.json");
-           System.out.println("\n All Loaded Aliens:");
+        System.out.println("\n All Loaded Aliens:");
 
         for (AlienSpecies alien : aliens) {
             System.out.println(alien);
             System.out.println();
         }
-    }
+}
 }
