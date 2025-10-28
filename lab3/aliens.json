@@ -2,7 +2,7 @@
   "aliens": [
     {
       "name": "Klingon",
-      "planet": "Qo'noS",
+      "planet": "Soluna",
       "universe": "Star Trek",
       "abilities": ["Enhanced strength", "Warrior culture", "Honor-based society"],
       "population": 8500000000,

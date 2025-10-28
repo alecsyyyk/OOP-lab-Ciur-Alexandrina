@@ -8,25 +8,22 @@ import org.json.JSONArray;
 public class AlienJsonParser {
     
     public static void main(String[] args) {
-        System.out.println("=== Parsing aliens.json with JSON Library ===\n");
+        System.out.println(" Parsing aliens.json with JSON Library \n");
         
         try {
-            // Read the file
-            String content = Files.readString(Paths.get("aliens.json"));
+           Path filePath = Paths.get("aliens.json");
+           String content = Files.readString(filePath);
             
-            // Parse as JSON object
             JSONObject root = new JSONObject(content);
-            
-            // Get the aliens array
+           
             JSONArray aliens = root.getJSONArray("aliens");
             
             System.out.println("Total aliens found: " + aliens.length() + "\n");
             
-            // Print each alien separately
             for (int i = 0; i < aliens.length(); i++) {
                 JSONObject alien = aliens.getJSONObject(i);
                 
-                System.out.println("=== Alien #" + (i + 1) + " ===");
+                System.out.println("Alien #" + (i + 1) + " Details:");
                 System.out.println("Name: " + alien.getString("name"));
                 System.out.println("Planet: " + alien.getString("planet"));
                 System.out.println("Universe: " + alien.getString("universe"));
