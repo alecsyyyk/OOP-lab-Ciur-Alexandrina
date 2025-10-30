@@ -2,62 +2,70 @@ package lab3;
 import java.util.List;
 
 public class AlienSpecies {
-    private String name;
-    private String planet;
-    private String universe;
-    private String classification;
-    private String temperament;
-    private long population;
-    private List<String> abilities;
+    private int id;
+    private Boolean isHumanoid;  
+    private String originPlanet; 
+    private Integer age;         
+    private List<String> physicalTraits; 
 
-    public AlienSpecies(String name, String planet, String universe, 
-                        String classification, String temperament, 
-                        long population, List<String> abilities) {
-        this.name = name;
-        this.planet = planet;
-        this.universe = universe;
-        this.classification = classification;
-        this.temperament = temperament;
-        this.population = population;
-        this.abilities = abilities;
+    public AlienSpecies(int id, Boolean isHumanoid, String originPlanet, 
+                        Integer age, List<String> physicalTraits) {
+        this.id = id;
+        this.isHumanoid = isHumanoid;
+        this.originPlanet = originPlanet;
+        this.age = age;
+        this.physicalTraits = physicalTraits;
     }
 
-    public String getName() {
-        return name;
+    public int getId() {
+        return id;
     }
 
-    public String getPlanet() {
-        return planet;
+    public Boolean getIsHumanoid() {
+        return isHumanoid;
     }
     
-    public String getUniverse() {
-        return universe;
+    public String getOriginPlanet() {
+        return originPlanet;
     }
 
-    public String getClassification() {
-        return classification;
+    public Integer getAge() {
+        return age;
     }
 
-    public String getTemperament() {
-        return temperament;
+    public List<String> getPhysicalTraits() {
+        return physicalTraits;
     }
 
-    public long getPopulation() {
-        return population;
+    public boolean hasHumanoidData() {
+        return isHumanoid != null;
     }
 
-    public List<String> getAbilities() {
-        return abilities;
+    public boolean hasPlanetData() {
+        return originPlanet != null;
+    }
+
+    public boolean hasAgeData() {
+        return age != null;
+    }
+
+    public boolean hasTraitsData() {
+        return physicalTraits != null && !physicalTraits.isEmpty();
     }
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(name).append(" from planet ").append(planet);
-        sb.append(" (").append(universe).append(" universe)\n");
-        sb.append("  Classification: ").append(classification).append("\n");
-        sb.append("  Temperament: ").append(temperament).append("\n");
-        sb.append("  Population: ").append(population).append("\n");
-        sb.append("  Abilities: ").append(String.join(", ", abilities));
+        sb.append("Alien ID: ").append(id).append("\n");
+        sb.append("  Is Humanoid: ").append(isHumanoid != null ? isHumanoid : "Unknown").append("\n");
+        sb.append("  Origin Planet: ").append(originPlanet != null ? originPlanet : "Unknown").append("\n");
+        sb.append("  Age: ").append(age != null ? age : "Unknown").append("\n");
+        
+        if (hasTraitsData()) {
+            sb.append("  Physical Traits: ").append(String.join(", ", physicalTraits));
+        } else {
+            sb.append("  Physical Traits: None recorded");
+        }
+        
         return sb.toString();
     }
 }

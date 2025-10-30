@@ -6,45 +6,89 @@ import java.util.Map;
 
 public class AlienClassifier {
 
-    public Map<String, List<AlienSpecies>> classifyByUniverse(List<AlienSpecies> aliens){
+    public Map<String, List<AlienSpecies>> classifyByPlanet(List<AlienSpecies> aliens) {
         Map<String, List<AlienSpecies>> classified = new HashMap<>();
+        
         for (AlienSpecies alien : aliens) {
-            String universe = alien.getUniverse();
+            String planet = alien.getOriginPlanet();
+            String category = (planet != null) ? planet : "Unknown";
 
-            if (!classified.containsKey(universe)) {
-                classified.put(universe, new ArrayList<>());
-            }
-           
-                classified.get(universe).add(alien);
-        }
-        return classified;
-    }
-
-
-    public Map<String, List<AlienSpecies>> classifyByPopulation(List<AlienSpecies> aliens) {
-        Map<String, List<AlienSpecies>> classified = new HashMap<>();
-
-        for (AlienSpecies alien : aliens){
-            String category;
-            long population = alien.getPopulation();
-
-            if (population == 0){
-                category = "Extinct";
-            } else if (population < 1_000_000){
-                category = "Small";
-            } else if (population < 1_000_000_000){
-                category = "Medium";
-            } else {
-                category = "Large";
-            }
-
-            if (!classified.containsKey(category)) {
-                classified.put(category, new ArrayList<>());
-            }
-
+            classified.putIfAbsent(category, new ArrayList<>());
             classified.get(category).add(alien);
         }
+        
         return classified;
     }
-    
+
+    public Map<String, List<AlienSpecies>> classifyByHumanoid(List<AlienSpecies> aliens) {
+        Map<String, List<AlienSpecies>> classified = new HashMap<>();
+        
+        for (AlienSpecies alien : aliens) {
+            String category;
+            
+            if (alien.getIsHumanoid() == null) {
+                category = "Unknown";
+            } else if (alien.getIsHumanoid()) {
+                category = "Humanoid";
+            } else {
+                category = "Non-Humanoid";
+            }
+
+            classified.putIfAbsent(category, new ArrayList<>());
+            classified.get(category).add(alien);
+        }
+        
+        return classified;
+    }
+
+    public Map<String, List<AlienSpecies>> classifyByAge(List<AlienSpecies> aliens) {
+        Map<String, List<AlienSpecies>> classified = new HashMap<>();
+
+        for (AlienSpecies alien : aliens) {
+            String category;
+            
+            if (alien.getAge() == null) {
+                category = "Unknown Age";
+            } else if (alien.getAge() < 100) {
+                category = "Young (<100)";
+            } else if (alien.getAge() < 1000) {
+                category = "Adult (100-1000)";
+            } else {
+                category = "Ancient (>1000)";
+            }
+
+            classified.putIfAbsent(category, new ArrayList<>());
+            classified.get(category).add(alien);
+        }
+        
+        return classified;
+    }
+
+    public Map<String, List<AlienSpecies>> classifyByTraitsAvailability(List<AlienSpecies> aliens) {
+        Map<String, List<AlienSpecies>> classified = new HashMap<>();
+        
+        for (AlienSpecies alien : aliens) {
+            String category = alien.hasTraitsData() ? "Has Traits" : "No Traits";
+            
+            classified.putIfAbsent(category, new ArrayList<>());
+            classified.get(category).add(alien);
+        }
+        
+        return classified;
+    }
+
+    public Map<String, List<AlienSpecies>> classifyBySpecificTrait(List<AlienSpecies> aliens) {
+        Map<String, List<AlienSpecies>> classified = new HashMap<>();
+        
+        for (AlienSpecies alien : aliens) {
+            if (alien.hasTraitsData()) {
+                for (String trait : alien.getPhysicalTraits()) {
+                    classified.putIfAbsent(trait, new ArrayList<>());
+                    classified.get(trait).add(alien);
+                }
+            }
+        }
+        
+        return classified;
+    }
 }

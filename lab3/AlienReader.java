@@ -3,13 +3,12 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class AlienFileReader {
+public class AlienReader {
     
     public static void main(String[] args) {
         System.out.println("Reading aliens.json file:\n");
         
         try {
-            // Read the entire file into a String
             String content = Files.readString(Paths.get("aliens.json"));
             
             // Print the raw file content

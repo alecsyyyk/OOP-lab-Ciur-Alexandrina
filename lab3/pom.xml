@@ -35,11 +35,11 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.1.0</version>
                 <executions>
-                    <!-- Default: AlienDataLoader -->
+                    <!-- Default: Alien Info -->
                     <execution>
                         <id>default</id>
                         <configuration>
-                            <mainClass>lab3.AlienDataLoader</mainClass>
+                            <mainClass>lab3.AlienInfo</mainClass>
                         </configuration>
                     </execution>
                     <!-- TestClassification -->
@@ -58,9 +58,9 @@
                     </execution>
                     <!-- AlienDataLoader -->
                     <execution>
-                        <id>loader</id>
+                        <id>info</id>
                         <configuration>
-                            <mainClass>lab3.AlienDataLoader</mainClass>
+                            <mainClass>lab3.AlienInfo</mainClass>
                         </configuration>
                     </execution>
                 </executions>
