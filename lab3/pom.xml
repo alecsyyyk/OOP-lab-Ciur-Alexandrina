@@ -56,7 +56,7 @@
                             <mainClass>lab3.AlienDemo</mainClass>
                         </configuration>
                     </execution>
-                    <!-- AlienDataLoader -->
+                    <!-- Alien Total info -->
                     <execution>
                         <id>info</id>
                         <configuration>

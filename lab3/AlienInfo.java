@@ -7,8 +7,7 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class AlienInfo
- {
+public class AlienInfo{
     public static List<AlienSpecies> aliens(String filename) {
         List<AlienSpecies> aliens = new ArrayList<>();
         
