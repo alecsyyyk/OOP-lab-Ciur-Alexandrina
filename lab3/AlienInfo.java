@@ -63,7 +63,7 @@ public class AlienInfo{
     }
     
     public static void main(String[] args) {
-        List<AlienSpecies> aliens = Aliens("aliens.json");
+        List<AlienSpecies> aliens = aliens("aliens.json");
         
         System.out.println("\n Sample Aliens (first 5)");
         for (int i = 0; i < Math.min(5, aliens.size()); i++) {

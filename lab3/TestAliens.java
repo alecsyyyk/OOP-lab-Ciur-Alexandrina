@@ -2,16 +2,10 @@ package lab3;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Tests AlienSpecies with NEW data structure
- * Creates 3 test aliens manually with new constructor:
- * AlienSpecies(int id, Boolean isHumanoid, String originPlanet, Integer age, List<String> physicalTraits)
- */
 public class TestAliens {
     public static void main(String[] args) {
-        System.out.println("Testing AlienSpecies with New Data Structure \n");
+        System.out.println("Testing AlienSpecies \n");
         
-        // Create test alien 1: Klingon-like (humanoid from VOGSPHERE)
         List<String> traits1 = Arrays.asList("BULKY", "HAIRY", "TALL");
         AlienSpecies alien1 = new AlienSpecies(
             1001,           // id

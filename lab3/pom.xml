@@ -63,6 +63,13 @@
                             <mainClass>lab3.AlienInfo</mainClass>
                         </configuration>
                     </execution>
+                    <!-- Output JSON files -->
+                    <execution>
+                        <id>out</id>
+                        <configuration>
+                            <mainClass>lab3.OutPut</mainClass>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
         </plugins>
