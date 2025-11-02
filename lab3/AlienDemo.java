@@ -3,7 +3,7 @@ import java.util.List;
 
 public class AlienDemo {
     public static void main(String[] args) {
-        List<AlienSpecies> aliens = AlienInfo.aliens("aliens.json");
+        List<AlienSpecies> aliens = AlienInfo.Aliens("aliens.json");
 
         System.out.println("\n All Alien IDs");
         for (AlienSpecies alien : aliens) {
