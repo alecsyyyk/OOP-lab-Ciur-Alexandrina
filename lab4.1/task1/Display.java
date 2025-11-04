@@ -60,8 +60,7 @@ public class Display {
         monitor2.compareSharpness(monitor3);
         monitor1.compareWithMonitor(monitor3);
 
-        System.out.println("Comaprison complete.");
-
+        System.out.println("Comparison complete.");
 
     }
 }
