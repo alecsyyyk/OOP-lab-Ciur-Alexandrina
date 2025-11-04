@@ -1,4 +1,4 @@
-package task2;
+package task4;
 
 import java.io.*; 
 import java.nio.file.*;
@@ -109,24 +109,26 @@ public class Main {
             return;
         }
 
-        String filePath = args[0];
-        String fileContent = FileReader.readFileIntoString(filePath);
-
-        if(fileContent.isEmpty()){
-            System.out.println("File content is empty");
-            return;
-        }
-
-        TextData textData = new TextData(fileContent);
-
+        for(String filePath : args) {
+    System.out.println("\n Analyzing: " + filePath);
+    String fileContent = FileReader.readFileIntoString(filePath);
+    
+    if(fileContent.isEmpty()){
+        System.out.println("File not found or empty.");
+        continue;
+    }
+    
+    TextData textData = new TextData(fileContent);
+    
+    System.out.println("Number of Vowels: " + textData.getNumberOfVowels());
+    System.out.println("Number of Consonants: " + textData.getNumberOfConsonants());
+    System.out.println("Number of Letters: " + textData.getNumberOfLetters());
+    System.out.println("Number of Sentences: " + textData.getNumberOfSentences());
+    System.out.println("Longest Word: " + textData.getLongestWord());
+}
         
-        System.out.println("Loaded Text Data:");
-        System.out.println("Number of Vowels: " + textData.getNumberOfVowels());
-        System.out.println("Number of Consonants: " + textData.getNumberOfConsonants());
-        System.out.println("Number of Letters: " + textData.getNumberOfLetters());
-        System.out.println("Number of Sentences: " + textData.getNumberOfSentences());
-        System.out.println("Longest Word: " + textData.getLongestWord());
-
     }
     
 }
+
+
