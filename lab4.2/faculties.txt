@@ -1,0 +1,5 @@
+name,abbreviation,studyField,studentEmails
+Faculty of Computers, Informatics and Microelectronics,FCIM,SOFTWARE_ENGINEERING,ana.popescu@student.utm.md;ion.ionescu@student.utm.md
+Faculty of Mechanical, Industrial Engineering and Transport,FIMIT,MECHANICAL_ENGINEERING,maria.dragomir@student.utm.md
+Faculty of Food Technology,FTA,FOOD_TECHNOLOGY,andrei.stanciu@student.utm.md
+Faculty of Urbanism and Architecture,FUA,URBANISM_ARCHITECTURE,elena.mihai@student.utm.md
