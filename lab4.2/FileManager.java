@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileManager {
-    // Field to store the file path where data will be saved
     private String filePath;
 
     public FileManager(String filePath) {
@@ -15,9 +14,8 @@ public class FileManager {
             
             // Write header line (column names)
             writer.write("firstName,lastName,email,enrollmentDate,dateOfBirth");
-            writer.newLine();  // Move to next line
-            
-            // Loop through each student
+            writer.newLine();  
+ 
             for (Student student : students) {
 
                 String line = student.getFirstName() + "," +
@@ -26,7 +24,6 @@ public class FileManager {
                              student.getEnrollmentDate() + "," +
                              student.getDateOfBirth();
                 
-                // Write the line to file
                 writer.write(line);
                 writer.newLine();  
             }
@@ -36,7 +33,6 @@ public class FileManager {
             System.out.println("Saved " + students.size() + " students to " + filePath);
             
         } catch (IOException e) {
-            // If something goes wrong 
             System.out.println("Error saving students: " + e.getMessage());
         }
     }
@@ -47,7 +43,6 @@ public class FileManager {
         
         File file = new File(filePath);
         if (!file.exists()) {
-            // File doesn't exist yet, return empty list
             System.out.println("File not found. Starting with empty list.");
             return students;
         }
@@ -58,8 +53,8 @@ public class FileManager {
             
             BufferedReader reader = new BufferedReader(fileReader);
             
-            String headerLine = reader.readLine();
-            
+            reader.readLine(); 
+
             // Read the file line by line
             String line;
             while ((line = reader.readLine()) != null) {  
@@ -85,24 +80,21 @@ public class FileManager {
             System.out.println("Loaded " + students.size() + " students from " + filePath);
             
         } catch (IOException e) {
-            // IO error (can't read file, corrupted, etc.)
             System.out.println("Error loading students: " + e.getMessage());
         }
         
         return students;
     }
     
-    // Check if the save file exists
     public boolean fileExists() {
         File file = new File(filePath);
-        return file.exists();  // Returns true if file exists, false otherwise
+        return file.exists();  
     }
     
-    // Delete the save file (useful for testing or reset)
     public boolean deleteFile() {
         File file = new File(filePath);
         if (file.exists()) {
-            boolean deleted = file.delete();  // Try to delete
+            boolean deleted = file.delete();  
             if (deleted) {
                 System.out.println("Deleted file: " + filePath);
             }
@@ -112,30 +104,24 @@ public class FileManager {
         return false;  
     }
     
-    // ========== FACULTY METHODS ==========
-    
-    // Save a list of faculties to a text file (CSV format)
+
     public void saveFaculties(List<Faculty> faculties, String facultyFilePath) {
-        try {
-            FileWriter fileWriter = new FileWriter(facultyFilePath);
-            BufferedWriter writer = new BufferedWriter(fileWriter);
-            
-            // Write header line
+        try(BufferedWriter writer = new  BufferedWriter(new FileWriter(facultyFilePath))){
+    
             writer.write("name,abbreviation,studyField,studentEmails");
             writer.newLine();
             
-            // Loop through each faculty
             for (Faculty faculty : faculties) {
-                // Get all student emails separated by semicolons
+                
                 String studentEmails = "";
                 for (int i = 0; i < faculty.getStudents().size(); i++) {
                     studentEmails += faculty.getStudents().get(i).getEmail();
                     if (i < faculty.getStudents().size() - 1) {
-                        studentEmails += ";";  // Use semicolon to separate emails
+                        studentEmails += ";";  
                     }
                 }
                 
-                // Create line with faculty data
+              
                 String line = faculty.getName() + "," +
                              faculty.getAbbreviation() + "," +
                              faculty.getStudyField() + "," +
@@ -153,7 +139,7 @@ public class FileManager {
         }
     }
     
-    // Load faculties from file and link them to students
+  
     public List<Faculty> loadFaculties(String facultyFilePath, List<Student> allStudents) {
         List<Faculty> faculties = new ArrayList<>();
         
@@ -167,15 +153,13 @@ public class FileManager {
             FileReader fileReader = new FileReader(facultyFilePath);
             BufferedReader reader = new BufferedReader(fileReader);
             
-            // Skip header line
-            String headerLine = reader.readLine();
+            reader.readLine();
             
-            // Read each faculty
             String line;
             while ((line = reader.readLine()) != null) {
-                String[] parts = line.split(",", 4);  // Split into max 4 parts
+                String[] parts = line.split(",", 4);  
                 
-                if (parts.length >= 3) {  // At least name, abbreviation, studyField
+                if (parts.length >= 3) {  
                     String name = parts[0];
                     String abbreviation = parts[1];
                     String studyFieldStr = parts[2];
@@ -183,14 +167,12 @@ public class FileManager {
                     // Convert string to StudyField enum
                     StudyField studyField = StudyField.valueOf(studyFieldStr);
                     
-                    // Create faculty
                     Faculty faculty = new Faculty(name, abbreviation, studyField);
                     
                     // If there are student emails, add them
                     if (parts.length == 4 && !parts[3].isEmpty()) {
                         String[] emails = parts[3].split(";");
-                        
-                        // Find and add each student by email
+                
                         for (String email : emails) {
                             for (Student student : allStudents) {
                                 if (student.getEmail().equals(email)) {

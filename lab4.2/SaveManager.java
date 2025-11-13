@@ -9,12 +9,11 @@ public class SaveManager {
     
     // Constructor
     public SaveManager() {
-        this.fileManager = new FileManager("students.txt");
+        this.fileManager = new FileManager("students.json");
         this.students = new ArrayList<>();
         this.faculties = new ArrayList<>();
     }
     
-    // Load all data - students from JSON, create faculties programmatically
     public void loadAllData() {
        
         this.students = StudentExample.loadStudentsFromJSON("students.json");
@@ -27,7 +26,6 @@ public class SaveManager {
         System.out.println("  - " + faculties.size() + " faculties");
     }
     
-    // Create faculties and assign students based on email patterns
     private void createFacultiesAndAssignStudents() {
         // Create 4 faculties
         Faculty fcim = new Faculty("Faculty of Computers, Informatics and Microelectronics",
@@ -41,42 +39,37 @@ public class SaveManager {
         
        
         if (students.size() >= 5) {
-            fcim.addStudent(students.get(0));  // Ana
-            fcim.addStudent(students.get(1));  // Ion
-            fimit.addStudent(students.get(2)); // Maria
-            fta.addStudent(students.get(3));   // Andrei
-            fua.addStudent(students.get(4));   // Elena
+            fcim.addStudent(students.get(0)); 
+            fcim.addStudent(students.get(1));  
+            fimit.addStudent(students.get(2)); 
+            fta.addStudent(students.get(3));   
+            fua.addStudent(students.get(4));   
         }
         
-        // Add faculties to list
         faculties.add(fcim);
         faculties.add(fimit);
         faculties.add(fta);
         faculties.add(fua);
     }
-    // Save all data to files
+  
     public void saveAllData() {
         fileManager.saveStudents(students);
         fileManager.saveFaculties(faculties, "faculties.txt");
         System.out.println("All data saved successfully!");
     }
     
-    // Get students
     public List<Student> getStudents() {
         return students;
     }
     
-    // Get faculties
     public List<Faculty> getFaculties() {
         return faculties;
     }
     
-    // Add new student
     public void addStudent(Student student) {
         students.add(student);
     }
     
-    // Add student to faculty
     public void addStudentToFaculty(Student student, Faculty faculty) {
         if (!students.contains(student)) {
             students.add(student);
@@ -84,15 +77,13 @@ public class SaveManager {
         faculty.addStudent(student);
     }
     
-    // Display all students
     public void displayAllStudents() {
         System.out.println("\n All Students:");
         for (int i = 0; i < students.size(); i++) {
             System.out.println((i + 1) + ". " + students.get(i));
         }
     }
-    
-    // Display all faculties
+   
     public void displayAllFaculties() {
         System.out.println("\n All Faculties:");
         for (int i = 0; i < faculties.size(); i++) {
@@ -101,7 +92,6 @@ public class SaveManager {
         }
     }
     
-    // Display students by faculty
     public void displayStudentsByFaculty(int facultyIndex) {
         if (facultyIndex >= 0 && facultyIndex < faculties.size()) {
             Faculty faculty = faculties.get(facultyIndex);
@@ -119,16 +109,13 @@ public class SaveManager {
             }
         }
     }
-    
-    // Main method - program entry point
+
     public static void main(String[] args) {
-        java.util.Scanner scanner = new java.util.Scanner(System.in);
-        
-        // Create SaveManager and load data
+        Scanner scanner = new Scanner(System.in);
+       
         SaveManager saveManager = new SaveManager();
         saveManager.loadAllData();
-        
-        // Main menu loop
+    
         boolean running = true;
         while (running) {
             System.out.println("\n University Management System ");

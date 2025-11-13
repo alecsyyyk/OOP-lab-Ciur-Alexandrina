@@ -7,17 +7,15 @@ import java.util.Scanner;
 
 public class StudentExample {
     public static void main(String[] args) {
-        
-        // Read students from JSON file
+
         List<Student> students = loadStudentsFromJSON("students.json");
-        
-        // Print all students
+
         System.out.println("All Students");
         for (int i = 0; i < students.size(); i++) {
             System.out.println((i + 1) + ". " + students.get(i));
         }
         
-        System.out.println(); // blank line
+        System.out.println();
         
         if(students.size()>0) {
             Scanner scanner = new Scanner(System.in);
@@ -67,7 +65,6 @@ public class StudentExample {
             while ((line = reader.readLine()) != null) {
                 line = line.trim();
                 
-                // Read each field from JSON
                 if (line.contains("\"firstName\"")) {
                     firstName = extractValue(line);
                 } else if (line.contains("\"lastName\"")) {
@@ -79,7 +76,6 @@ public class StudentExample {
                 } else if (line.contains("\"dateOfBirth\"")) {
                     dateOfBirth = extractValue(line);
                     
-                    // When we have all fields, create a student
                     if (firstName != null && lastName != null && email != null 
                         && enrollmentDate != null && dateOfBirth != null) {
                         students.add(new Student(firstName, lastName, email, 
@@ -99,7 +95,6 @@ public class StudentExample {
         return students;
     }
     
-    // Helper method to extract value from JSON line like: "firstName": "Ana",
     private static String extractValue(String line) {
         int start = line.indexOf(":") + 1;
         String value = line.substring(start).trim();

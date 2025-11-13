@@ -1,12 +1,11 @@
 public class Student {
-    // Fields - information about the student
+   
     private String firstName;
     private String lastName;
     private String email;
     private String enrollmentDate;  
     private String dateOfBirth;     
     
-    // Constructor - creates a new student
     public Student(String firstName, String lastName, String email, 
                    String enrollmentDate, String dateOfBirth) {
         this.firstName = firstName;
@@ -16,7 +15,7 @@ public class Student {
         this.dateOfBirth = dateOfBirth;
     }
 
-    // Getters - read the information
+    // Getters
     public String getFirstName() {
         return firstName;
     }
@@ -37,7 +36,7 @@ public class Student {
         return dateOfBirth;
     }
 
-    // Setters - change the information
+    // change the information
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -58,7 +57,6 @@ public class Student {
         this.dateOfBirth = dateOfBirth;
     }
 
-    // Print student information nicely
     public String toString() {
         return firstName + " " + lastName + " (" + email + ")";
     }

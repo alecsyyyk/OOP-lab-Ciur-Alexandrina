@@ -1,6 +1,0 @@
-firstName,lastName,email,enrollmentDate,dateOfBirth
-Ana,Popescu,ana.popescu@student.utm.md,2023-09-15,2005-03-20
-Ion,Ionescu,ion.ionescu@student.utm.md,2024-09-01,2006-07-14
-Maria,Dragomir,maria.dragomir@student.utm.md,2023-09-15,2005-11-08
-Andrei,Stanciu,andrei.stanciu@student.utm.md,2024-02-10,2006-01-25
-Elena,Mihai,elena.mihai@student.utm.md,2023-09-15,2005-06-30
