@@ -4,7 +4,8 @@ public class Student {
     private String lastName;
     private String email;
     private String enrollmentDate;  
-    private String dateOfBirth;     
+    private String dateOfBirth;
+    private boolean isGraduated;  // Track if student has graduated     
     
     public Student(String firstName, String lastName, String email, 
                    String enrollmentDate, String dateOfBirth) {
@@ -13,6 +14,7 @@ public class Student {
         this.email = email;
         this.enrollmentDate = enrollmentDate;
         this.dateOfBirth = dateOfBirth;
+        this.isGraduated = false;  // Students start as enrolled, not graduated
     }
 
     // Getters
@@ -34,6 +36,14 @@ public class Student {
 
     public String getDateOfBirth() {
         return dateOfBirth;
+    }
+
+    public boolean isGraduated() {
+        return isGraduated;
+    }
+
+    public void setGraduated(boolean graduated) {
+        isGraduated = graduated;
     }
 
     // change the information

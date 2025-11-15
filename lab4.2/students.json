@@ -4,7 +4,8 @@
     "lastName": "Popescu",
     "email": "ana.popescu@student.utm.md",
     "enrollmentDate": "2023-09-15",
-    "dateOfBirth": "2005-03-20"
+    "dateOfBirth": "2005-03-20",
+    "graduated": true
   },
   {
     "firstName": "Ion",
@@ -18,7 +19,8 @@
     "lastName": "Dragomir",
     "email": "maria.dragomir@student.utm.md",
     "enrollmentDate": "2023-09-15",
-    "dateOfBirth": "2005-11-08"
+    "dateOfBirth": "2005-11-08",
+    "graduated": true
   },
   {
     "firstName": "Andrei",

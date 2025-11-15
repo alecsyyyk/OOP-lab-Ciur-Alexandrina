@@ -48,24 +48,8 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.1.0</version>
                 <configuration>
-                    <mainClass>SaveManager</mainClass>
+                    <mainClass>UniversityManagementSystem</mainClass>
                 </configuration>
-                <executions>
-                    <!-- SaveManager - Main program -->
-                    <execution>
-                        <id>savemanager</id>
-                        <configuration>
-                            <mainClass>SaveManager</mainClass>
-                        </configuration>
-                    </execution>
-                    <!-- Student Example - Simple viewer -->
-                    <execution>
-                        <id>student</id>
-                        <configuration>
-                            <mainClass>StudentExample</mainClass>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
