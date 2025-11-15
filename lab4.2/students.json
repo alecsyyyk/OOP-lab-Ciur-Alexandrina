@@ -34,6 +34,7 @@
     "lastName": "Mihai",
     "email": "elena.mihai@student.utm.md",
     "enrollmentDate": "2023-09-15",
-    "dateOfBirth": "2005-06-30"
+    "dateOfBirth": "2005-06-30",
+    "graduated": false
   }
 ]
