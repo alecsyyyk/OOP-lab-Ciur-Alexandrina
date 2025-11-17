@@ -31,46 +31,29 @@
         <sourceDirectory>.</sourceDirectory>
         <plugins>
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>3.1.0</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.6.1</version>
                 <executions>
-                    <!-- Default: Alien Info -->
                     <execution>
-                        <id>default</id>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
                         <configuration>
-                            <mainClass>lab3.AlienInfo</mainClass>
-                        </configuration>
-                    </execution>
-                    <!-- TestClassification -->
-                    <execution>
-                        <id>test</id>
-                        <configuration>
-                            <mainClass>lab3.TestClassification</mainClass>
-                        </configuration>
-                    </execution>
-                    <!-- AlienDemo -->
-                    <execution>
-                        <id>demo</id>
-                        <configuration>
-                            <mainClass>lab3.AlienDemo</mainClass>
-                        </configuration>
-                    </execution>
-                    <!-- Alien Total info -->
-                    <execution>
-                        <id>info</id>
-                        <configuration>
-                            <mainClass>lab3.AlienInfo</mainClass>
-                        </configuration>
-                    </execution>
-                    <!-- Output JSON files -->
-                    <execution>
-                        <id>out</id>
-                        <configuration>
-                            <mainClass>lab3.OutPut</mainClass>
+                            <outputDirectory>${project.build.directory}/lib</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <mainClass>lab3.UniverseStats</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>
