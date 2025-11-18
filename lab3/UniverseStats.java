@@ -92,11 +92,11 @@ public class UniverseStats {
             
             // Write detailed classification (all aliens with their data)
             view.writeClassificationToJson(byUniverse, "output.json");
-            System.out.println("✓ Detailed classification written to: output.json");
+            System.out.println("Detailed classification written to: output.json");
             
             // Write summary (just counts for each category)
             view.writeSummaryToJson(byUniverse, "output_summary.json");
-            System.out.println("✓ Summary statistics written to: output_summary.json");
+            System.out.println("Summary statistics written to: output_summary.json");
             
             System.out.println("\nOutput files created successfully!");
             

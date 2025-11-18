@@ -55,13 +55,11 @@ public class AlienSpecies {
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        
-        // Add alien ID
+  
         sb.append("Alien ID: ");
         sb.append(id);
         sb.append("\n");
-        
-        // Add humanoid status
+    
         sb.append("  Is Humanoid: ");
         if (isHumanoid != null) {
             sb.append(isHumanoid);
@@ -69,8 +67,7 @@ public class AlienSpecies {
             sb.append("Unknown");
         }
         sb.append("\n");
-        
-        // Add planet
+
         sb.append("  Origin Planet: ");
         if (originPlanet != null) {
             sb.append(originPlanet);
@@ -78,8 +75,7 @@ public class AlienSpecies {
             sb.append("Unknown");
         }
         sb.append("\n");
-        
-        // Add age
+ 
         sb.append("  Age: ");
         if (age != null) {
             sb.append(age);
@@ -87,8 +83,7 @@ public class AlienSpecies {
             sb.append("Unknown");
         }
         sb.append("\n");
-        
-        // Add traits
+
         sb.append("  Physical Traits: ");
         if (hasTraitsData()) {
             sb.append(String.join(", ", physicalTraits));
