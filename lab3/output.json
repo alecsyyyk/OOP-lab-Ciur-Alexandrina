@@ -2,6 +2,47 @@
   "Star Wars (Wookie)": [
     {
       "isHumanoid": false,
+      "traits": null,
+      "planet": "KASHYYYK",
+      "id": 1,
+      "age": 296
+    },
+    {
+      "isHumanoid": false,
+      "traits": [
+        "HAIRY",
+        "TALL"
+      ],
+      "planet": "KASHYYYK",
+      "id": 3,
+      "age": null
+    },
+    {
+      "isHumanoid": null,
+      "traits": [
+        "TALL",
+        "HAIRY"
+      ],
+      "planet": "KASHYYYK",
+      "id": 11,
+      "age": null
+    },
+    {
+      "isHumanoid": false,
+      "traits": null,
+      "planet": "KASHYYYK",
+      "id": 12,
+      "age": 311
+    },
+    {
+      "isHumanoid": null,
+      "traits": null,
+      "planet": "KASHYYYK",
+      "id": 26,
+      "age": null
+    },
+    {
+      "isHumanoid": false,
       "traits": [
         "TALL",
         "HAIRY"
@@ -19,6 +60,20 @@
       "planet": "KASHYYYK",
       "id": 75,
       "age": 375
+    },
+    {
+      "isHumanoid": false,
+      "traits": null,
+      "planet": "KASHYYYK",
+      "id": 80,
+      "age": 101
+    },
+    {
+      "isHumanoid": false,
+      "traits": null,
+      "planet": "KASHYYYK",
+      "id": 105,
+      "age": 259
     },
     {
       "isHumanoid": false,
@@ -49,9 +104,23 @@
       "planet": "KASHYYYK",
       "id": 183,
       "age": 354
+    },
+    {
+      "isHumanoid": false,
+      "traits": null,
+      "planet": "KASHYYYK",
+      "id": 195,
+      "age": 270
     }
   ],
   "Hitchhiker's (Betelgeusian)": [
+    {
+      "isHumanoid": null,
+      "traits": null,
+      "planet": "BETELGEUSE",
+      "id": 7,
+      "age": 51
+    },
     {
       "isHumanoid": true,
       "traits": [
@@ -84,6 +153,71 @@
     },
     {
       "isHumanoid": true,
+      "traits": null,
+      "planet": "BETELGEUSE",
+      "id": 38,
+      "age": 3
+    },
+    {
+      "isHumanoid": true,
+      "traits": null,
+      "planet": "BETELGEUSE",
+      "id": 51,
+      "age": 75
+    },
+    {
+      "isHumanoid": null,
+      "traits": [
+        "EXTRA_HEAD",
+        "EXTRA_ARMS"
+      ],
+      "planet": "BETELGEUSE",
+      "id": 115,
+      "age": null
+    },
+    {
+      "isHumanoid": true,
+      "traits": null,
+      "planet": "BETELGEUSE",
+      "id": 116,
+      "age": 97
+    },
+    {
+      "isHumanoid": true,
+      "traits": [
+        "EXTRA_ARMS",
+        "EXTRA_HEAD"
+      ],
+      "planet": "BETELGEUSE",
+      "id": 127,
+      "age": null
+    },
+    {
+      "isHumanoid": true,
+      "traits": null,
+      "planet": "BETELGEUSE",
+      "id": 144,
+      "age": 38
+    },
+    {
+      "isHumanoid": null,
+      "traits": [
+        "EXTRA_HEAD",
+        "EXTRA_ARMS"
+      ],
+      "planet": "BETELGEUSE",
+      "id": 152,
+      "age": 19
+    },
+    {
+      "isHumanoid": true,
+      "traits": null,
+      "planet": "BETELGEUSE",
+      "id": 154,
+      "age": 98
+    },
+    {
+      "isHumanoid": true,
       "traits": [
         "EXTRA_ARMS",
         "EXTRA_HEAD"
@@ -91,9 +225,44 @@
       "planet": "BETELGEUSE",
       "id": 157,
       "age": 73
+    },
+    {
+      "isHumanoid": null,
+      "traits": null,
+      "planet": "BETELGEUSE",
+      "id": 172,
+      "age": 20
+    },
+    {
+      "isHumanoid": null,
+      "traits": null,
+      "planet": "BETELGEUSE",
+      "id": 178,
+      "age": null
+    },
+    {
+      "isHumanoid": null,
+      "traits": null,
+      "planet": "BETELGEUSE",
+      "id": 196,
+      "age": 43
     }
   ],
   "Star Wars (Ewok)": [
+    {
+      "isHumanoid": false,
+      "traits": null,
+      "planet": "ENDOR",
+      "id": 16,
+      "age": null
+    },
+    {
+      "isHumanoid": false,
+      "traits": null,
+      "planet": "ENDOR",
+      "id": 50,
+      "age": 53
+    },
     {
       "isHumanoid": false,
       "traits": [
@@ -103,6 +272,30 @@
       "planet": "ENDOR",
       "id": 63,
       "age": 3
+    },
+    {
+      "isHumanoid": null,
+      "traits": [
+        "HAIRY",
+        "SHORT"
+      ],
+      "planet": "ENDOR",
+      "id": 76,
+      "age": null
+    },
+    {
+      "isHumanoid": null,
+      "traits": null,
+      "planet": "ENDOR",
+      "id": 88,
+      "age": 58
+    },
+    {
+      "isHumanoid": false,
+      "traits": null,
+      "planet": "ENDOR",
+      "id": 94,
+      "age": null
     },
     {
       "isHumanoid": false,
@@ -123,9 +316,64 @@
       "planet": "ENDOR",
       "id": 100,
       "age": 4
+    },
+    {
+      "isHumanoid": false,
+      "traits": [
+        "SHORT",
+        "HAIRY"
+      ],
+      "planet": "ENDOR",
+      "id": 143,
+      "age": null
+    },
+    {
+      "isHumanoid": false,
+      "traits": null,
+      "planet": "ENDOR",
+      "id": 161,
+      "age": 58
+    },
+    {
+      "isHumanoid": false,
+      "traits": null,
+      "planet": "ENDOR",
+      "id": 186,
+      "age": 18
+    },
+    {
+      "isHumanoid": null,
+      "traits": [
+        "HAIRY",
+        "SHORT"
+      ],
+      "planet": "ENDOR",
+      "id": 191,
+      "age": 53
     }
   ],
   "Lord of the Rings (Elf)": [
+    {
+      "isHumanoid": null,
+      "traits": null,
+      "planet": "EARTH",
+      "id": 4,
+      "age": 17601
+    },
+    {
+      "isHumanoid": true,
+      "traits": null,
+      "planet": "EARTH",
+      "id": 8,
+      "age": 12775
+    },
+    {
+      "isHumanoid": true,
+      "traits": null,
+      "planet": "EARTH",
+      "id": 29,
+      "age": 10461
+    },
     {
       "isHumanoid": true,
       "traits": [
@@ -135,6 +383,13 @@
       "planet": "EARTH",
       "id": 81,
       "age": 1112
+    },
+    {
+      "isHumanoid": null,
+      "traits": null,
+      "planet": "EARTH",
+      "id": 93,
+      "age": 9719
     },
     {
       "isHumanoid": true,
@@ -158,6 +413,13 @@
     },
     {
       "isHumanoid": true,
+      "traits": null,
+      "planet": "EARTH",
+      "id": 137,
+      "age": 7128
+    },
+    {
+      "isHumanoid": true,
       "traits": [
         "POINTY_EARS",
         "BLONDE"
@@ -165,9 +427,64 @@
       "planet": "EARTH",
       "id": 155,
       "age": 18957
+    },
+    {
+      "isHumanoid": true,
+      "traits": null,
+      "planet": "EARTH",
+      "id": 163,
+      "age": 13035
+    },
+    {
+      "isHumanoid": true,
+      "traits": null,
+      "planet": "EARTH",
+      "id": 166,
+      "age": 14694
+    },
+    {
+      "isHumanoid": null,
+      "traits": [
+        "POINTY_EARS",
+        "BLONDE"
+      ],
+      "planet": "EARTH",
+      "id": 181,
+      "age": null
+    },
+    {
+      "isHumanoid": null,
+      "traits": [
+        "BLONDE",
+        "POINTY_EARS"
+      ],
+      "planet": "EARTH",
+      "id": 187,
+      "age": null
+    },
+    {
+      "isHumanoid": true,
+      "traits": null,
+      "planet": "EARTH",
+      "id": 192,
+      "age": 14463
     }
   ],
   "Hitchhiker's (Vogon)": [
+    {
+      "isHumanoid": null,
+      "traits": null,
+      "planet": "VOGSPHERE",
+      "id": 6,
+      "age": 144
+    },
+    {
+      "isHumanoid": false,
+      "traits": null,
+      "planet": "VOGSPHERE",
+      "id": 10,
+      "age": 105
+    },
     {
       "isHumanoid": false,
       "traits": [
@@ -179,6 +496,84 @@
       "age": 96
     },
     {
+      "isHumanoid": null,
+      "traits": [
+        "GREEN",
+        "BULKY"
+      ],
+      "planet": "VOGSPHERE",
+      "id": 14,
+      "age": 106
+    },
+    {
+      "isHumanoid": false,
+      "traits": null,
+      "planet": "VOGSPHERE",
+      "id": 46,
+      "age": 9
+    },
+    {
+      "isHumanoid": false,
+      "traits": null,
+      "planet": "VOGSPHERE",
+      "id": 48,
+      "age": 6
+    },
+    {
+      "isHumanoid": null,
+      "traits": [
+        "GREEN",
+        "BULKY"
+      ],
+      "planet": "VOGSPHERE",
+      "id": 53,
+      "age": null
+    },
+    {
+      "isHumanoid": null,
+      "traits": [
+        "GREEN",
+        "BULKY"
+      ],
+      "planet": "VOGSPHERE",
+      "id": 54,
+      "age": 10
+    },
+    {
+      "isHumanoid": false,
+      "traits": [
+        "GREEN",
+        "BULKY"
+      ],
+      "planet": "VOGSPHERE",
+      "id": 67,
+      "age": null
+    },
+    {
+      "isHumanoid": false,
+      "traits": null,
+      "planet": "VOGSPHERE",
+      "id": 68,
+      "age": 145
+    },
+    {
+      "isHumanoid": null,
+      "traits": null,
+      "planet": "VOGSPHERE",
+      "id": 69,
+      "age": 25
+    },
+    {
+      "isHumanoid": false,
+      "traits": [
+        "BULKY",
+        "GREEN"
+      ],
+      "planet": "VOGSPHERE",
+      "id": 77,
+      "age": null
+    },
+    {
       "isHumanoid": false,
       "traits": [
         "BULKY",
@@ -187,6 +582,44 @@
       "planet": "VOGSPHERE",
       "id": 85,
       "age": 167
+    },
+    {
+      "isHumanoid": null,
+      "traits": null,
+      "planet": "VOGSPHERE",
+      "id": 91,
+      "age": 131
+    },
+    {
+      "isHumanoid": null,
+      "traits": null,
+      "planet": "VOGSPHERE",
+      "id": 98,
+      "age": 54
+    },
+    {
+      "isHumanoid": false,
+      "traits": null,
+      "planet": "VOGSPHERE",
+      "id": 107,
+      "age": 124
+    },
+    {
+      "isHumanoid": null,
+      "traits": [
+        "BULKY",
+        "GREEN"
+      ],
+      "planet": "VOGSPHERE",
+      "id": 118,
+      "age": 2
+    },
+    {
+      "isHumanoid": false,
+      "traits": null,
+      "planet": "VOGSPHERE",
+      "id": 121,
+      "age": null
     },
     {
       "isHumanoid": false,
@@ -210,6 +643,20 @@
     },
     {
       "isHumanoid": false,
+      "traits": null,
+      "planet": "VOGSPHERE",
+      "id": 138,
+      "age": 170
+    },
+    {
+      "isHumanoid": false,
+      "traits": null,
+      "planet": "VOGSPHERE",
+      "id": 141,
+      "age": 78
+    },
+    {
+      "isHumanoid": false,
       "traits": [
         "BULKY",
         "GREEN"
@@ -217,6 +664,27 @@
       "planet": "VOGSPHERE",
       "id": 169,
       "age": 58
+    },
+    {
+      "isHumanoid": false,
+      "traits": null,
+      "planet": "VOGSPHERE",
+      "id": 170,
+      "age": null
+    },
+    {
+      "isHumanoid": false,
+      "traits": null,
+      "planet": "VOGSPHERE",
+      "id": 174,
+      "age": 200
+    },
+    {
+      "isHumanoid": false,
+      "traits": null,
+      "planet": "VOGSPHERE",
+      "id": 188,
+      "age": 114
     }
   ],
   "Marvel (Asgardian)": [
@@ -231,6 +699,13 @@
       "age": 3566
     },
     {
+      "isHumanoid": null,
+      "traits": null,
+      "planet": "ASGARD",
+      "id": 17,
+      "age": 3587
+    },
+    {
       "isHumanoid": true,
       "traits": [
         "TALL",
@@ -242,6 +717,47 @@
     },
     {
       "isHumanoid": true,
+      "traits": null,
+      "planet": "ASGARD",
+      "id": 45,
+      "age": 3731
+    },
+    {
+      "isHumanoid": true,
+      "traits": [
+        "BLONDE",
+        "TALL"
+      ],
+      "planet": "ASGARD",
+      "id": 55,
+      "age": null
+    },
+    {
+      "isHumanoid": true,
+      "traits": [
+        "BLONDE",
+        "TALL"
+      ],
+      "planet": "ASGARD",
+      "id": 74,
+      "age": null
+    },
+    {
+      "isHumanoid": true,
+      "traits": null,
+      "planet": "ASGARD",
+      "id": 103,
+      "age": 1446
+    },
+    {
+      "isHumanoid": true,
+      "traits": null,
+      "planet": "ASGARD",
+      "id": 112,
+      "age": null
+    },
+    {
+      "isHumanoid": true,
       "traits": [
         "BLONDE",
         "TALL"
@@ -249,6 +765,20 @@
       "planet": "ASGARD",
       "id": 124,
       "age": 4869
+    },
+    {
+      "isHumanoid": true,
+      "traits": null,
+      "planet": "ASGARD",
+      "id": 140,
+      "age": 4297
+    },
+    {
+      "isHumanoid": null,
+      "traits": null,
+      "planet": "ASGARD",
+      "id": 159,
+      "age": null
     },
     {
       "isHumanoid": true,
@@ -279,9 +809,43 @@
       "planet": "ASGARD",
       "id": 176,
       "age": 289
+    },
+    {
+      "isHumanoid": true,
+      "traits": null,
+      "planet": "ASGARD",
+      "id": 194,
+      "age": 1123
     }
   ],
   "Lord of the Rings (Dwarf)": [
+    {
+      "isHumanoid": null,
+      "traits": null,
+      "planet": "EARTH",
+      "id": 23,
+      "age": 81
+    },
+    {
+      "isHumanoid": true,
+      "traits": [
+        "SHORT",
+        "BULKY"
+      ],
+      "planet": "EARTH",
+      "id": 25,
+      "age": null
+    },
+    {
+      "isHumanoid": null,
+      "traits": [
+        "SHORT",
+        "BULKY"
+      ],
+      "planet": "EARTH",
+      "id": 35,
+      "age": 184
+    },
     {
       "isHumanoid": true,
       "traits": [
@@ -291,6 +855,16 @@
       "planet": "EARTH",
       "id": 70,
       "age": 148
+    },
+    {
+      "isHumanoid": true,
+      "traits": [
+        "SHORT",
+        "BULKY"
+      ],
+      "planet": "EARTH",
+      "id": 84,
+      "age": null
     },
     {
       "isHumanoid": true,
@@ -313,6 +887,23 @@
       "age": 35
     },
     {
+      "isHumanoid": null,
+      "traits": [
+        "BULKY",
+        "SHORT"
+      ],
+      "planet": "EARTH",
+      "id": 123,
+      "age": 42
+    },
+    {
+      "isHumanoid": null,
+      "traits": null,
+      "planet": "EARTH",
+      "id": 151,
+      "age": null
+    },
+    {
       "isHumanoid": true,
       "traits": [
         "SHORT",
@@ -332,13 +923,6 @@
       "age": null
     },
     {
-      "isHumanoid": false,
-      "traits": null,
-      "planet": "KASHYYYK",
-      "id": 1,
-      "age": 296
-    },
-    {
       "isHumanoid": true,
       "traits": ["BLONDE"],
       "planet": "EARTH",
@@ -346,97 +930,11 @@
       "age": null
     },
     {
-      "isHumanoid": false,
-      "traits": [
-        "HAIRY",
-        "TALL"
-      ],
-      "planet": "KASHYYYK",
-      "id": 3,
-      "age": null
-    },
-    {
-      "isHumanoid": null,
-      "traits": null,
-      "planet": "EARTH",
-      "id": 4,
-      "age": 17601
-    },
-    {
       "isHumanoid": null,
       "traits": null,
       "planet": null,
       "id": 5,
       "age": 5955
-    },
-    {
-      "isHumanoid": null,
-      "traits": null,
-      "planet": "VOGSPHERE",
-      "id": 6,
-      "age": 144
-    },
-    {
-      "isHumanoid": null,
-      "traits": null,
-      "planet": "BETELGEUSE",
-      "id": 7,
-      "age": 51
-    },
-    {
-      "isHumanoid": true,
-      "traits": null,
-      "planet": "EARTH",
-      "id": 8,
-      "age": 12775
-    },
-    {
-      "isHumanoid": false,
-      "traits": null,
-      "planet": "VOGSPHERE",
-      "id": 10,
-      "age": 105
-    },
-    {
-      "isHumanoid": null,
-      "traits": [
-        "TALL",
-        "HAIRY"
-      ],
-      "planet": "KASHYYYK",
-      "id": 11,
-      "age": null
-    },
-    {
-      "isHumanoid": false,
-      "traits": null,
-      "planet": "KASHYYYK",
-      "id": 12,
-      "age": 311
-    },
-    {
-      "isHumanoid": null,
-      "traits": [
-        "GREEN",
-        "BULKY"
-      ],
-      "planet": "VOGSPHERE",
-      "id": 14,
-      "age": 106
-    },
-    {
-      "isHumanoid": false,
-      "traits": null,
-      "planet": "ENDOR",
-      "id": 16,
-      "age": null
-    },
-    {
-      "isHumanoid": null,
-      "traits": null,
-      "planet": "ASGARD",
-      "id": 17,
-      "age": 3587
     },
     {
       "isHumanoid": null,
@@ -460,35 +958,11 @@
       "age": null
     },
     {
-      "isHumanoid": null,
-      "traits": null,
-      "planet": "EARTH",
-      "id": 23,
-      "age": 81
-    },
-    {
       "isHumanoid": true,
       "traits": null,
       "planet": null,
       "id": 24,
       "age": 12488
-    },
-    {
-      "isHumanoid": true,
-      "traits": [
-        "SHORT",
-        "BULKY"
-      ],
-      "planet": "EARTH",
-      "id": 25,
-      "age": null
-    },
-    {
-      "isHumanoid": null,
-      "traits": null,
-      "planet": "KASHYYYK",
-      "id": 26,
-      "age": null
     },
     {
       "isHumanoid": true,
@@ -503,13 +977,6 @@
       "planet": null,
       "id": 28,
       "age": 175
-    },
-    {
-      "isHumanoid": true,
-      "traits": null,
-      "planet": "EARTH",
-      "id": 29,
-      "age": 10461
     },
     {
       "isHumanoid": true,
@@ -543,16 +1010,6 @@
       "age": 134
     },
     {
-      "isHumanoid": null,
-      "traits": [
-        "SHORT",
-        "BULKY"
-      ],
-      "planet": "EARTH",
-      "id": 35,
-      "age": 184
-    },
-    {
       "isHumanoid": true,
       "traits": null,
       "planet": null,
@@ -565,13 +1022,6 @@
       "planet": "BETELGEUSE",
       "id": 37,
       "age": null
-    },
-    {
-      "isHumanoid": true,
-      "traits": null,
-      "planet": "BETELGEUSE",
-      "id": 38,
-      "age": 3
     },
     {
       "isHumanoid": false,
@@ -622,32 +1072,11 @@
       "age": null
     },
     {
-      "isHumanoid": true,
-      "traits": null,
-      "planet": "ASGARD",
-      "id": 45,
-      "age": 3731
-    },
-    {
-      "isHumanoid": false,
-      "traits": null,
-      "planet": "VOGSPHERE",
-      "id": 46,
-      "age": 9
-    },
-    {
       "isHumanoid": null,
       "traits": ["TALL"],
       "planet": null,
       "id": 47,
       "age": 153
-    },
-    {
-      "isHumanoid": false,
-      "traits": null,
-      "planet": "VOGSPHERE",
-      "id": 48,
-      "age": 6
     },
     {
       "isHumanoid": null,
@@ -658,50 +1087,6 @@
       "planet": null,
       "id": 49,
       "age": 4
-    },
-    {
-      "isHumanoid": false,
-      "traits": null,
-      "planet": "ENDOR",
-      "id": 50,
-      "age": 53
-    },
-    {
-      "isHumanoid": true,
-      "traits": null,
-      "planet": "BETELGEUSE",
-      "id": 51,
-      "age": 75
-    },
-    {
-      "isHumanoid": null,
-      "traits": [
-        "GREEN",
-        "BULKY"
-      ],
-      "planet": "VOGSPHERE",
-      "id": 53,
-      "age": null
-    },
-    {
-      "isHumanoid": null,
-      "traits": [
-        "GREEN",
-        "BULKY"
-      ],
-      "planet": "VOGSPHERE",
-      "id": 54,
-      "age": 10
-    },
-    {
-      "isHumanoid": true,
-      "traits": [
-        "BLONDE",
-        "TALL"
-      ],
-      "planet": "ASGARD",
-      "id": 55,
-      "age": null
     },
     {
       "isHumanoid": true,
@@ -777,30 +1162,6 @@
       "age": null
     },
     {
-      "isHumanoid": false,
-      "traits": [
-        "GREEN",
-        "BULKY"
-      ],
-      "planet": "VOGSPHERE",
-      "id": 67,
-      "age": null
-    },
-    {
-      "isHumanoid": false,
-      "traits": null,
-      "planet": "VOGSPHERE",
-      "id": 68,
-      "age": 145
-    },
-    {
-      "isHumanoid": null,
-      "traits": null,
-      "planet": "VOGSPHERE",
-      "id": 69,
-      "age": 25
-    },
-    {
       "isHumanoid": true,
       "traits": [
         "BLONDE",
@@ -825,36 +1186,6 @@
       "age": 4
     },
     {
-      "isHumanoid": true,
-      "traits": [
-        "BLONDE",
-        "TALL"
-      ],
-      "planet": "ASGARD",
-      "id": 74,
-      "age": null
-    },
-    {
-      "isHumanoid": null,
-      "traits": [
-        "HAIRY",
-        "SHORT"
-      ],
-      "planet": "ENDOR",
-      "id": 76,
-      "age": null
-    },
-    {
-      "isHumanoid": false,
-      "traits": [
-        "BULKY",
-        "GREEN"
-      ],
-      "planet": "VOGSPHERE",
-      "id": 77,
-      "age": null
-    },
-    {
       "isHumanoid": null,
       "traits": null,
       "planet": null,
@@ -867,13 +1198,6 @@
       "planet": "ENDOR",
       "id": 79,
       "age": null
-    },
-    {
-      "isHumanoid": false,
-      "traits": null,
-      "planet": "KASHYYYK",
-      "id": 80,
-      "age": 101
     },
     {
       "isHumanoid": null,
@@ -893,16 +1217,6 @@
       "age": 88
     },
     {
-      "isHumanoid": true,
-      "traits": [
-        "SHORT",
-        "BULKY"
-      ],
-      "planet": "EARTH",
-      "id": 84,
-      "age": null
-    },
-    {
       "isHumanoid": null,
       "traits": null,
       "planet": null,
@@ -915,13 +1229,6 @@
       "planet": "ENDOR",
       "id": 87,
       "age": 14
-    },
-    {
-      "isHumanoid": null,
-      "traits": null,
-      "planet": "ENDOR",
-      "id": 88,
-      "age": 58
     },
     {
       "isHumanoid": false,
@@ -939,31 +1246,10 @@
     },
     {
       "isHumanoid": null,
-      "traits": null,
-      "planet": "VOGSPHERE",
-      "id": 91,
-      "age": 131
-    },
-    {
-      "isHumanoid": null,
       "traits": ["HAIRY"],
       "planet": "ENDOR",
       "id": 92,
       "age": 60
-    },
-    {
-      "isHumanoid": null,
-      "traits": null,
-      "planet": "EARTH",
-      "id": 93,
-      "age": 9719
-    },
-    {
-      "isHumanoid": false,
-      "traits": null,
-      "planet": "ENDOR",
-      "id": 94,
-      "age": null
     },
     {
       "isHumanoid": true,
@@ -990,13 +1276,6 @@
       "age": 285
     },
     {
-      "isHumanoid": null,
-      "traits": null,
-      "planet": "VOGSPHERE",
-      "id": 98,
-      "age": 54
-    },
-    {
       "isHumanoid": false,
       "traits": ["HAIRY"],
       "planet": null,
@@ -1011,13 +1290,6 @@
       "age": 29
     },
     {
-      "isHumanoid": true,
-      "traits": null,
-      "planet": "ASGARD",
-      "id": 103,
-      "age": 1446
-    },
-    {
       "isHumanoid": false,
       "traits": ["GREEN"],
       "planet": null,
@@ -1025,25 +1297,11 @@
       "age": 64
     },
     {
-      "isHumanoid": false,
-      "traits": null,
-      "planet": "KASHYYYK",
-      "id": 105,
-      "age": 259
-    },
-    {
       "isHumanoid": null,
       "traits": ["BLONDE"],
       "planet": "ASGARD",
       "id": 106,
       "age": null
-    },
-    {
-      "isHumanoid": false,
-      "traits": null,
-      "planet": "VOGSPHERE",
-      "id": 107,
-      "age": 124
     },
     {
       "isHumanoid": false,
@@ -1067,13 +1325,6 @@
       "age": 82
     },
     {
-      "isHumanoid": true,
-      "traits": null,
-      "planet": "ASGARD",
-      "id": 112,
-      "age": null
-    },
-    {
       "isHumanoid": null,
       "traits": null,
       "planet": null,
@@ -1091,33 +1342,6 @@
       "age": null
     },
     {
-      "isHumanoid": null,
-      "traits": [
-        "EXTRA_HEAD",
-        "EXTRA_ARMS"
-      ],
-      "planet": "BETELGEUSE",
-      "id": 115,
-      "age": null
-    },
-    {
-      "isHumanoid": true,
-      "traits": null,
-      "planet": "BETELGEUSE",
-      "id": 116,
-      "age": 97
-    },
-    {
-      "isHumanoid": null,
-      "traits": [
-        "BULKY",
-        "GREEN"
-      ],
-      "planet": "VOGSPHERE",
-      "id": 118,
-      "age": 2
-    },
-    {
       "isHumanoid": true,
       "traits": ["EXTRA_ARMS"],
       "planet": "BETELGEUSE",
@@ -1133,27 +1357,10 @@
     },
     {
       "isHumanoid": false,
-      "traits": null,
-      "planet": "VOGSPHERE",
-      "id": 121,
-      "age": null
-    },
-    {
-      "isHumanoid": false,
       "traits": ["TALL"],
       "planet": "KASHYYYK",
       "id": 122,
       "age": 80
-    },
-    {
-      "isHumanoid": null,
-      "traits": [
-        "BULKY",
-        "SHORT"
-      ],
-      "planet": "EARTH",
-      "id": 123,
-      "age": 42
     },
     {
       "isHumanoid": false,
@@ -1161,16 +1368,6 @@
       "planet": "ENDOR",
       "id": 126,
       "age": 60
-    },
-    {
-      "isHumanoid": true,
-      "traits": [
-        "EXTRA_ARMS",
-        "EXTRA_HEAD"
-      ],
-      "planet": "BETELGEUSE",
-      "id": 127,
-      "age": null
     },
     {
       "isHumanoid": null,
@@ -1214,20 +1411,6 @@
       "age": 10980
     },
     {
-      "isHumanoid": true,
-      "traits": null,
-      "planet": "EARTH",
-      "id": 137,
-      "age": 7128
-    },
-    {
-      "isHumanoid": false,
-      "traits": null,
-      "planet": "VOGSPHERE",
-      "id": 138,
-      "age": 170
-    },
-    {
       "isHumanoid": null,
       "traits": null,
       "planet": null,
@@ -1237,40 +1420,9 @@
     {
       "isHumanoid": true,
       "traits": null,
-      "planet": "ASGARD",
-      "id": 140,
-      "age": 4297
-    },
-    {
-      "isHumanoid": false,
-      "traits": null,
-      "planet": "VOGSPHERE",
-      "id": 141,
-      "age": 78
-    },
-    {
-      "isHumanoid": true,
-      "traits": null,
       "planet": null,
       "id": 142,
       "age": 114
-    },
-    {
-      "isHumanoid": false,
-      "traits": [
-        "SHORT",
-        "HAIRY"
-      ],
-      "planet": "ENDOR",
-      "id": 143,
-      "age": null
-    },
-    {
-      "isHumanoid": true,
-      "traits": null,
-      "planet": "BETELGEUSE",
-      "id": 144,
-      "age": 38
     },
     {
       "isHumanoid": true,
@@ -1318,35 +1470,11 @@
       "age": 46
     },
     {
-      "isHumanoid": null,
-      "traits": null,
-      "planet": "EARTH",
-      "id": 151,
-      "age": null
-    },
-    {
-      "isHumanoid": null,
-      "traits": [
-        "EXTRA_HEAD",
-        "EXTRA_ARMS"
-      ],
-      "planet": "BETELGEUSE",
-      "id": 152,
-      "age": 19
-    },
-    {
       "isHumanoid": true,
       "traits": null,
       "planet": null,
       "id": 153,
       "age": 3701
-    },
-    {
-      "isHumanoid": true,
-      "traits": null,
-      "planet": "BETELGEUSE",
-      "id": 154,
-      "age": 98
     },
     {
       "isHumanoid": false,
@@ -1366,32 +1494,11 @@
       "age": 265
     },
     {
-      "isHumanoid": null,
-      "traits": null,
-      "planet": "ASGARD",
-      "id": 159,
-      "age": null
-    },
-    {
-      "isHumanoid": false,
-      "traits": null,
-      "planet": "ENDOR",
-      "id": 161,
-      "age": 58
-    },
-    {
       "isHumanoid": false,
       "traits": ["TALL"],
       "planet": null,
       "id": 162,
       "age": 188
-    },
-    {
-      "isHumanoid": true,
-      "traits": null,
-      "planet": "EARTH",
-      "id": 163,
-      "age": 13035
     },
     {
       "isHumanoid": null,
@@ -1415,13 +1522,6 @@
     },
     {
       "isHumanoid": true,
-      "traits": null,
-      "planet": "EARTH",
-      "id": 166,
-      "age": 14694
-    },
-    {
-      "isHumanoid": true,
       "traits": ["EXTRA_ARMS"],
       "planet": "BETELGEUSE",
       "id": 167,
@@ -1436,31 +1536,10 @@
     },
     {
       "isHumanoid": false,
-      "traits": null,
-      "planet": "VOGSPHERE",
-      "id": 170,
-      "age": null
-    },
-    {
-      "isHumanoid": false,
       "traits": ["BULKY"],
       "planet": "VOGSPHERE",
       "id": 171,
       "age": null
-    },
-    {
-      "isHumanoid": null,
-      "traits": null,
-      "planet": "BETELGEUSE",
-      "id": 172,
-      "age": 20
-    },
-    {
-      "isHumanoid": false,
-      "traits": null,
-      "planet": "VOGSPHERE",
-      "id": 174,
-      "age": 200
     },
     {
       "isHumanoid": false,
@@ -1468,13 +1547,6 @@
       "planet": null,
       "id": 175,
       "age": 17
-    },
-    {
-      "isHumanoid": null,
-      "traits": null,
-      "planet": "BETELGEUSE",
-      "id": 178,
-      "age": null
     },
     {
       "isHumanoid": null,
@@ -1489,16 +1561,6 @@
       "planet": "ENDOR",
       "id": 180,
       "age": 31
-    },
-    {
-      "isHumanoid": null,
-      "traits": [
-        "POINTY_EARS",
-        "BLONDE"
-      ],
-      "planet": "EARTH",
-      "id": 181,
-      "age": null
     },
     {
       "isHumanoid": false,
@@ -1522,30 +1584,6 @@
       "age": null
     },
     {
-      "isHumanoid": false,
-      "traits": null,
-      "planet": "ENDOR",
-      "id": 186,
-      "age": 18
-    },
-    {
-      "isHumanoid": null,
-      "traits": [
-        "BLONDE",
-        "POINTY_EARS"
-      ],
-      "planet": "EARTH",
-      "id": 187,
-      "age": null
-    },
-    {
-      "isHumanoid": false,
-      "traits": null,
-      "planet": "VOGSPHERE",
-      "id": 188,
-      "age": 114
-    },
-    {
       "isHumanoid": true,
       "traits": ["BLONDE"],
       "planet": null,
@@ -1563,49 +1601,11 @@
       "age": 4555
     },
     {
-      "isHumanoid": null,
-      "traits": [
-        "HAIRY",
-        "SHORT"
-      ],
-      "planet": "ENDOR",
-      "id": 191,
-      "age": 53
-    },
-    {
-      "isHumanoid": true,
-      "traits": null,
-      "planet": "EARTH",
-      "id": 192,
-      "age": 14463
-    },
-    {
       "isHumanoid": false,
       "traits": ["HAIRY"],
       "planet": "KASHYYYK",
       "id": 193,
       "age": 86
-    },
-    {
-      "isHumanoid": true,
-      "traits": null,
-      "planet": "ASGARD",
-      "id": 194,
-      "age": 1123
-    },
-    {
-      "isHumanoid": false,
-      "traits": null,
-      "planet": "KASHYYYK",
-      "id": 195,
-      "age": 270
-    },
-    {
-      "isHumanoid": null,
-      "traits": null,
-      "planet": "BETELGEUSE",
-      "id": 196,
-      "age": 43
     },
     {
       "isHumanoid": null,
