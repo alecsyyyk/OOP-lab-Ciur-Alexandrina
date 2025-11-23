@@ -1,4 +1,0 @@
-1920,1080,96.0,Samsung S24
-2560,1440,109.0,Dell UltraSharp
-3840,2160,163.0,LG 4K
-1920,1200,94.0,HP EliteDisplay
