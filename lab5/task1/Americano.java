@@ -1,8 +1,10 @@
-public class Americano {
+package task1;
+
+public class Americano extends Coffee {
     private int mlOfWater;
     private final String coffeeName = "Americano";
 
-    Americano(Intensity coffeeIntensity, int mlOfWater) {
+    public Americano(Intensity coffeeIntensity, int mlOfWater) {
         super(coffeeIntensity);
         this.mlOfWater = mlOfWater;
     }

@@ -1,7 +1,8 @@
-public class Capuccino extends Coffee {
+package task1;
+public class Cappuccino extends Coffee {
     private int mlOfMilk;
 
-    public Capuccino(Intensity coffeeIntensity, int mlOfMilk) {
+    public Cappuccino(Intensity coffeeIntensity, int mlOfMilk) {
         super(coffeeIntensity);
         this.mlOfMilk = mlOfMilk;
     }

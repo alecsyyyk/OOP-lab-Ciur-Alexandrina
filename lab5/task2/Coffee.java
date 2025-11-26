@@ -1,4 +1,4 @@
-package task1;
+package task2;
 public class Coffee {
      private Intensity coffeeIntensity;
     private final String name = "Coffee";
@@ -13,5 +13,9 @@ public class Coffee {
 
     public String getName() {
         return name;
+    }
+
+    public void printCoffeeDetails(){
+        System.out.println("Coffee intensity: "+ coffeeIntensity);
     }
 }

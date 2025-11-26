@@ -1,4 +1,4 @@
-package task1;
+package task2;
 public class SyrupCappuccino extends Cappuccino {
     private SyrupType syrup;
     private final String coffee = "SyrupCappuccino";
@@ -14,5 +14,13 @@ public class SyrupCappuccino extends Cappuccino {
 
     public String getCoffee() {
         return coffee;
+    }
+
+    public void printCoffeeDetails(){
+        System.out.println("Syrup Cappuccino:");
+        System.out.println("Coffee intensity: " + getCoffeeIntensity());
+        System.out.println("Cappuccino milk: " + getMlOfMilk() + "ml");
+        System.out.println("Syrup type: " + syrup);
+        System.out.println();
     }
 }

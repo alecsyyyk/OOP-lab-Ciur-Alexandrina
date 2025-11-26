@@ -1,4 +1,4 @@
-package task1;
+package task2;
 public class PumpkinSpiceLatte extends Cappuccino {
     private int mgOfPumpkinSpice;
     private final String name = "PumpkinSpiceLatte";
@@ -14,5 +14,13 @@ public class PumpkinSpiceLatte extends Cappuccino {
 
     public String getName() {
         return name;
+    }
+
+    public void printCoffeeDetails(){
+        System.out.println("Pumpkin Spice Latte:");
+        System.out.println("Coffee intensity: " + getCoffeeIntensity());
+        System.out.println("Cappuccino milk: " + getMlOfMilk() + "ml");
+        System.out.println("Pumpkin Spice: "+ mgOfPumpkinSpice + "mg");
+        System.out.println();
     }
 }
