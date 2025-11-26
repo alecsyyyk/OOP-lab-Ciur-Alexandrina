@@ -11,13 +11,7 @@ public class AlienClassifier {
         
         for (AlienSpecies alien : aliens) {
             String planet = alien.getOriginPlanet();
-            String category;
-            
-            if (planet != null) {
-                category = planet;
-            } else {
-                category = "Unknown";
-            }
+            String category = (planet != null) ? planet : "Unknown";
 
             classified.putIfAbsent(category, new ArrayList<>());
             classified.get(category).add(alien);
@@ -74,12 +68,7 @@ public class AlienClassifier {
         Map<String, List<AlienSpecies>> classified = new HashMap<>();
         
         for (AlienSpecies alien : aliens) {
-            String category;
-            if (alien.hasTraitsData()) {
-                category = "Has Traits";
-            } else {
-                category = "No Traits";
-            }
+            String category = alien.hasTraitsData() ? "Has Traits" : "No Traits";
             
             classified.putIfAbsent(category, new ArrayList<>());
             classified.get(category).add(alien);
@@ -115,305 +104,300 @@ public class AlienClassifier {
         
         return classified;
     }
-    
-    private String determineUniverse(AlienSpecies alien) {
-        
-        if (isWookie(alien)) {
-            return "Star Wars (Wookie)";
-        }
-        if (isEwok(alien)) {
-            return "Star Wars (Ewok)";
-        }
-        
-        if (isAsgardian(alien)) {
-            return "Marvel (Asgardian)";
-        }
 
-        if (isBetelgeusian(alien)) {
-            return "Hitchhiker's (Betelgeusian)";
-        }
-        if (isVogon(alien)) {
-            return "Hitchhiker's (Vogon)";
-        }
-        
-        if (isDwarf(alien)) {
-            return "Lord of the Rings (Dwarf)";
-        }
-        if (isElf(alien)) {
+    private String determineUniverse(AlienSpecies alien) {
+        // Priority rules for Lord of the Rings
+        if (alien.hasAgeData() && alien.getAge() > 5000) {
             return "Lord of the Rings (Elf)";
         }
         
-        // Fallback: classify by traits if no planet data
-        if (!alien.hasPlanetData() && alien.hasTraitsData()) {
-            String traitBasedUniverse = classifyByTraitsOnly(alien);
-            if (traitBasedUniverse != null) {
-                return traitBasedUniverse;
-            }
+        if (hasTrait(alien, "SHORT") && hasTrait(alien, "BULKY")) {
+            return "Lord of the Rings (Dwarf)";
         }
         
-        return "Undefined Universe";
-    }
-    
-    // Classify aliens without planet data based on their traits
-    private String classifyByTraitsOnly(AlienSpecies alien) {
-        List<String> traits = alien.getPhysicalTraits();
+        // Check for insufficient data cases first
+        if (!alien.hasHumanoidData() && !alien.hasPlanetData() && !alien.hasAgeData() && !alien.hasTraitsData()) {
+            return "Undefined Universe";
+        }
         
-        // Check for Dwarf traits (SHORT + BULKY)
-        if (traits.contains("SHORT") && traits.contains("BULKY")) {
-            if (!alien.hasAgeData() || (alien.getAge() >= 0 && alien.getAge() <= 200)) {
-                if (!alien.hasHumanoidData() || alien.getIsHumanoid()) {
+        if (!alien.hasHumanoidData() && !alien.hasPlanetData() && alien.hasAgeData() && 
+            alien.getAge() < 5000 && !alien.hasTraitsData()) {
+            return "Undefined Universe";
+        }
+        
+        if (alien.hasHumanoidData() && !alien.hasPlanetData() && !alien.hasAgeData() && !alien.hasTraitsData()) {
+            return "Undefined Universe";
+        }
+
+        
+        if (alien.hasHumanoidData() && alien.getIsHumanoid()) {
+            return classifyHumanoid(alien);
+        } else if (alien.hasHumanoidData() && !alien.getIsHumanoid()) {
+            return classifyNonHumanoid(alien);
+        } else {
+            // isHumanoid is null
+            return classifyHumanoidUnknown(alien);
+        }
+    }
+
+    private String classifyHumanoid(AlienSpecies alien) {
+        String planet = alien.getOriginPlanet();
+        
+        if ("ASGARD".equals(planet)) {
+            return "Marvel (Asgardian)";
+        } else if ("BETELGEUSE".equals(planet)) {
+            return "Hitchhiker's (Betelgeusian)";
+        } else if ("EARTH".equals(planet)) {
+            return "Lord of the Rings (Elf)";
+        } else {
+            // planet is null, humanoid is true
+            if (alien.hasAgeData() && alien.getAge() > 5000) {
+                return "Lord of the Rings (Elf)";
+            }
+            
+            if (alien.hasAgeData() && alien.getAge() < 5000) {
+                if (hasTrait(alien, "BLONDE") && hasTrait(alien, "TALL")) {
+                    return "Marvel (Asgardian)";
+                } else if (hasTrait(alien, "BLONDE")) {
+                    return "Undefined Universe";
+                } else if (alien.getAge() > 400 && hasTrait(alien, "TALL")) {
+                    return "Marvel (Asgardian)";
+                }
+            }
+            
+            if (alien.hasAgeData() && alien.getAge() < 100) {
+                if (hasTrait(alien, "EXTRA_ARMS") || hasTrait(alien, "EXTRA_HEAD")) {
+                    return "Hitchhiker's (Betelgeusian)";
+                }
+            }
+            
+            if (alien.hasAgeData() && alien.getAge() < 200) {
+                if (alien.getAge() > 60 && hasTrait(alien, "SHORT")) {
+                    return "Lord of the Rings (Dwarf)";
+                }
+                if (hasTrait(alien, "SHORT") && hasTrait(alien, "BULKY")) {
                     return "Lord of the Rings (Dwarf)";
                 }
             }
-        }
-        
-        // Check for Elf traits (POINTY_EARS)
-        if (traits.contains("POINTY_EARS")) {
-            if (!alien.hasAgeData() || alien.getAge() >= 0) {
-                if (!alien.hasHumanoidData() || alien.getIsHumanoid()) {
+            
+            if (alien.hasAgeData()) {
+                if (hasTrait(alien, "POINTY_EARS")) {
+                    return "Lord of the Rings (Elf)";
+                }
+                if (alien.getAge() > 5000 && hasTrait(alien, "BLONDE")) {
+                    return "Lord of the Rings (Elf)";
+                }
+            }
+            
+            if (alien.hasAgeData() && !alien.hasTraitsData()) {
+                return "Undefined Universe";
+            } else if (!alien.hasAgeData()) {
+                // age is null
+                if (hasTrait(alien, "BLONDE") && hasTrait(alien, "TALL")) {
+                    return "Marvel (Asgardian)";
+                }
+                if (hasTrait(alien, "TALL")) {
+                    return "Undefined Universe";
+                }
+                if (hasTrait(alien, "BLONDE")) {
+                    return "Undefined Universe";
+                }
+                if (hasTrait(alien, "EXTRA_ARMS") || hasTrait(alien, "EXTRA_HEAD")) {
+                    return "Hitchhiker's (Betelgeusian)";
+                }
+                if (hasTrait(alien, "SHORT")) {
+                    return "Lord of the Rings (Dwarf)";
+                }
+                if (hasTrait(alien, "BULKY")) {
+                    return "Lord of the Rings (Dwarf)";
+                }
+                if (hasTrait(alien, "POINTY_EARS")) {
                     return "Lord of the Rings (Elf)";
                 }
             }
         }
         
-        // Check for Asgardian traits (BLONDE + TALL)
-        if (traits.contains("BLONDE") && traits.contains("TALL")) {
-            if (!alien.hasAgeData() || (alien.getAge() >= 0 && alien.getAge() <= 5000)) {
-                if (!alien.hasHumanoidData() || alien.getIsHumanoid()) {
-                    return "Marvel (Asgardian)";
-                }
-            }
-        }
+        return "Undefined Universe";
+    }
+
+    private String classifyNonHumanoid(AlienSpecies alien) {
+        String planet = alien.getOriginPlanet();
         
-        // Check for Wookie traits (HAIRY + TALL)
-        if (traits.contains("HAIRY") && traits.contains("TALL")) {
-            if (!alien.hasAgeData() || (alien.getAge() >= 0 && alien.getAge() <= 400)) {
-                if (!alien.hasHumanoidData() || !alien.getIsHumanoid()) {
+        if ("KASHYYYK".equals(planet) || "ENDOR".equals(planet)) {
+            return "Star Wars (Wookie)";
+        }
+        if ("VOGSPHERE".equals(planet)) {
+            return "Hitchhiker's (Vogon)";
+        } else {
+            // planet is null, humanoid is false
+            if (alien.hasAgeData() && alien.getAge() < 400) {
+                if (alien.hasAgeData() && alien.getAge() < 200) {
+                    if (hasTrait(alien, "GREEN")) {
+                        return "Hitchhiker's (Vogon)";
+                    }
+                    if (hasTrait(alien, "BULKY")) {
+                        return "Hitchhiker's (Vogon)";
+                    }
+                }
+                if (hasTrait(alien, "HAIRY")) {
                     return "Star Wars (Wookie)";
                 }
-            }
-        }
-        
-        // Check for Ewok traits (SHORT + HAIRY)
-        if (traits.contains("SHORT") && traits.contains("HAIRY")) {
-            if (!alien.hasAgeData() || (alien.getAge() >= 0 && alien.getAge() <= 60)) {
-                if (!alien.hasHumanoidData() || !alien.getIsHumanoid()) {
+                if (hasTrait(alien, "TALL")) {
+                    return "Star Wars (Wookie)";
+                }
+            } else if (alien.hasAgeData() && alien.getAge() < 60 && 
+                       (hasTrait(alien, "HAIRY") || (hasTrait(alien, "SHORT") && !hasTrait(alien, "BULKY")))) {
+                return "Star Wars (Ewok)";
+            } else {
+                if (hasTrait(alien, "HAIRY")) {
+                    return "Star Wars (Wookie)";
+                }
+                if (hasTrait(alien, "TALL")) {
+                    return "Star Wars (Wookie)";
+                }
+                if (alien.hasAgeData() && alien.getAge() < 60 && 
+                    (hasTrait(alien, "HAIRY") || (hasTrait(alien, "SHORT") && !hasTrait(alien, "BULKY")))) {
                     return "Star Wars (Ewok)";
                 }
-            }
-        }
-        
-        // Check for Betelgeusian traits (EXTRA_ARMS + EXTRA_HEAD)
-        if (traits.contains("EXTRA_ARMS") && traits.contains("EXTRA_HEAD")) {
-            if (!alien.hasAgeData() || (alien.getAge() >= 0 && alien.getAge() <= 100)) {
-                if (!alien.hasHumanoidData() || alien.getIsHumanoid()) {
-                    return "Hitchhiker's (Betelgeusian)";
-                }
-            }
-        }
-        
-        // Check for Vogon traits (GREEN + BULKY)
-        if (traits.contains("GREEN") && traits.contains("BULKY")) {
-            if (!alien.hasAgeData() || (alien.getAge() >= 0 && alien.getAge() <= 200)) {
-                if (!alien.hasHumanoidData() || !alien.getIsHumanoid()) {
+                if (hasTrait(alien, "GREEN")) {
                     return "Hitchhiker's (Vogon)";
                 }
+                if (hasTrait(alien, "BULKY")) {
+                    return "Undefined Universe";
+                }
             }
         }
         
-        return null; // Cannot determine from traits alone
+        return "Undefined Universe";
     }
-    
-    // Star Wars Species
-    private boolean isWookie(AlienSpecies alien) {
-        // Must have planet KASHYYYK
-        if (!"KASHYYYK".equals(alien.getOriginPlanet())) {
-            return false;
+
+    private String classifyHumanoidUnknown(AlienSpecies alien) {
+        String planet = alien.getOriginPlanet();
+        
+        if ("ASGARD".equals(planet)) {
+            return "Marvel (Asgardian)";
+        } else if ("BETELGEUSE".equals(planet)) {
+            return "Hitchhiker's (Betelgeusian)";
+        } else if ("EARTH".equals(planet)) {
+            return "Lord of the Rings (Elf)";
+        } else if ("KASHYYYK".equals(planet) || "ENDOR".equals(planet)) {
+            return "Star Wars (Wookie)";
+        } else if ("VOGSPHERE".equals(planet)) {
+            return "Hitchhiker's (Vogon)";
+        } else {
+            // planet is null, humanoid is null
+            if (alien.hasAgeData() && alien.getAge() > 5000) {
+                return "Lord of the Rings (Elf)";
+            } else if (alien.hasAgeData() && alien.getAge() < 5000 && 
+                       hasTrait(alien, "POINTY_EARS") && hasTrait(alien, "BLONDE")) {
+                return "Lord of the Rings (Elf)";
+            } else if (alien.hasAgeData() && alien.getAge() < 400) {
+                if (hasTrait(alien, "HAIRY")) {
+                    return "Star Wars (Wookie)";
+                }
+                if (hasTrait(alien, "TALL")) {
+                    return "Undefined Universe";
+                }
+                
+                if (alien.hasAgeData() && alien.getAge() < 200) {
+                    if (hasTrait(alien, "BULKY") && hasTrait(alien, "SHORT")) {
+                        return "Lord of the Rings (Dwarf)";
+                    } else if (alien.getAge() < 60 && hasTrait(alien, "SHORT")) {
+                        return "Undefined Universe";
+                    } else if (hasTrait(alien, "SHORT") && alien.getAge() > 60) {
+                        return "Lord of the Rings (Dwarf)";
+                    } else if (hasTrait(alien, "GREEN")) {
+                        return "Hitchhiker's (Vogon)";
+                    }
+                }
+            } else if (alien.hasAgeData() && alien.getAge() < 60 && 
+                       (hasTrait(alien, "HAIRY") || (hasTrait(alien, "SHORT") && !hasTrait(alien, "BULKY")))) {
+                return "Star Wars (Ewok)";
+            } else if (alien.hasAgeData() && alien.getAge() < 5000) {
+                if (hasTrait(alien, "BLONDE") && hasTrait(alien, "TALL")) {
+                    return "Marvel (Asgardian)";
+                } else if (hasTrait(alien, "BLONDE")) {
+                    return "Undefined Universe";
+                } else if (alien.getAge() > 400 && hasTrait(alien, "TALL")) {
+                    return "Marvel (Asgardian)";
+                }
+            } else if (alien.hasAgeData() && alien.getAge() < 100) {
+                if (hasTrait(alien, "EXTRA_ARMS") || hasTrait(alien, "EXTRA_HEAD")) {
+                    return "Hitchhiker's (Betelgeusian)";
+                }
+            } else if (alien.hasAgeData() && alien.getAge() < 200) {
+                if (hasTrait(alien, "GREEN")) {
+                    return "Hitchhiker's (Vogon)";
+                }
+                if (hasTrait(alien, "GREEN") && hasTrait(alien, "BULKY")) {
+                    return "Hitchhiker's (Vogon)";
+                }
+                if (hasTrait(alien, "BULKY")) {
+                    return "Undefined Universe";
+                }
+            }
+            
+            if (alien.hasAgeData()) {
+                if (hasTrait(alien, "POINTY_EARS")) {
+                    return "Lord of the Rings (Elf)";
+                }
+                if (alien.getAge() > 5000 && hasTrait(alien, "BLONDE")) {
+                    return "Lord of the Rings (Elf)";
+                }
+                if (hasTrait(alien, "BLONDE") && hasTrait(alien, "POINTY_EARS")) {
+                    return "Lord of the Rings (Elf)";
+                }
+            } else {
+                // age is null
+                if (hasTrait(alien, "HAIRY")) {
+                    return "Star Wars (Wookie)";
+                }
+                if (hasTrait(alien, "TALL")) {
+                    return "Undefined Universe";
+                }
+                if (hasTrait(alien, "HAIRY") || (hasTrait(alien, "SHORT") && !hasTrait(alien, "BULKY"))) {
+                    return "Star Wars (Wookie)";
+                }
+                if (hasTrait(alien, "BLONDE") && hasTrait(alien, "TALL")) {
+                    return "Marvel (Asgardian)";
+                }
+                if (hasTrait(alien, "TALL")) {
+                    return "Undefined Universe";
+                }
+                if (hasTrait(alien, "BLONDE")) {
+                    return "Undefined Universe";
+                }
+                if (hasTrait(alien, "EXTRA_ARMS") || hasTrait(alien, "EXTRA_HEAD")) {
+                    return "Hitchhiker's (Betelgeusian)";
+                }
+                if (hasTrait(alien, "GREEN")) {
+                    return "Hitchhiker's (Vogon)";
+                }
+                if (hasTrait(alien, "GREEN") && hasTrait(alien, "BULKY")) {
+                    return "Hitchhiker's (Vogon)";
+                }
+                if (hasTrait(alien, "BULKY")) {
+                    return "Undefined Universe";
+                }
+                if (hasTrait(alien, "SHORT")) {
+                    return "Undefined Universe";
+                }
+                if (hasTrait(alien, "SHORT") && hasTrait(alien, "BULKY")) {
+                    return "Lord of the Rings (Dwarf)";
+                }
+                if (hasTrait(alien, "POINTY_EARS")) {
+                    return "Lord of the Rings (Elf)";
+                }
+            }
         }
         
-        // If isHumanoid data present, must be false
-        if (alien.hasHumanoidData() && alien.getIsHumanoid() != false) {
-            return false;
-        }
-        
-        // If age present, must be in range
-        if (alien.hasAgeData() && (alien.getAge() < 0 || alien.getAge() > 400)) {
-            return false;
-        }
-        
-        // Traits are optional - don't require them
-        
-        return true;
+        return "Undefined Universe";
     }
-    
-    private boolean isEwok(AlienSpecies alien) {
-        // Must have planet ENDOR
-        if (!"ENDOR".equals(alien.getOriginPlanet())) {
-            return false;
-        }
-        
-        // If isHumanoid data present, must be false
-        if (alien.hasHumanoidData() && alien.getIsHumanoid() != false) {
-            return false;
-        }
-        
-        // If age present, must be in range
-        if (alien.hasAgeData() && (alien.getAge() < 0 || alien.getAge() > 60)) {
-            return false;
-        }
-        
-        // Traits are optional - don't require them
-        
-        return true;
-    }
-    
-    // Marvel Species
-    private boolean isAsgardian(AlienSpecies alien) {
-        // Must have planet ASGARD
-        if (!"ASGARD".equals(alien.getOriginPlanet())) {
-            return false;
-        }
-        
-        // If isHumanoid data present, must be true
-        if (alien.hasHumanoidData() && alien.getIsHumanoid() != true) {
-            return false;
-        }
-        
-        // If age present, must be in range
-        if (alien.hasAgeData() && (alien.getAge() < 0 || alien.getAge() > 5000)) {
-            return false;
-        }
-        
-        // Traits are optional - don't require them
-        
-        return true;
-    }
-    
-    // Hitchhiker's Species
-    private boolean isBetelgeusian(AlienSpecies alien) {
-        // Must have planet BETELGEUSE
-        if (!"BETELGEUSE".equals(alien.getOriginPlanet())) {
-            return false;
-        }
-        
-        // If isHumanoid data present, must be true
-        if (alien.hasHumanoidData() && alien.getIsHumanoid() != true) {
-            return false;
-        }
-        
-        // If age present, must be in range
-        if (alien.hasAgeData() && (alien.getAge() < 0 || alien.getAge() > 100)) {
-            return false;
-        }
-        
-        // Traits are optional - don't require them
-        
-        return true;
-    }
-    
-    private boolean isVogon(AlienSpecies alien) {
-        // Must have planet VOGSPHERE
-        if (!"VOGSPHERE".equals(alien.getOriginPlanet())) {
-            return false;
-        }
-        
-        // If isHumanoid data present, must be false
-        if (alien.hasHumanoidData() && alien.getIsHumanoid() != false) {
-            return false;
-        }
-        
-        // If age present, must be in range
-        if (alien.hasAgeData() && (alien.getAge() < 0 || alien.getAge() > 200)) {
-            return false;
-        }
-        
-        // Traits are optional - don't require them
-        
-        return true;
-    }
-    
-    // Lord of the Rings Species  
-    private boolean isElf(AlienSpecies alien) {
-        // Must have planet EARTH
-        if (!"EARTH".equals(alien.getOriginPlanet())) {
-            return false;
-        }
-        
-        // If isHumanoid data present, must be true
-        if (alien.hasHumanoidData() && alien.getIsHumanoid() != true) {
-            return false;
-        }
-        
-        // If age present, must be >= 0 (no upper limit)
-        if (alien.hasAgeData() && alien.getAge() < 0) {
-            return false;
-        }
-        
-        // Traits are optional for Elves - don't require specific traits
-        // (This allows more Earth humanoids to be classified as Elves)
-        
-        return true;
-    }
-    
-    private boolean isDwarf(AlienSpecies alien) {
-        // Must have planet EARTH
-        if (!"EARTH".equals(alien.getOriginPlanet())) {
-            return false;
-        }
-        
-        // Must have traits data with SHORT and BULKY to be classified as Dwarf
-        if (!alien.hasTraitsData() || !hasTraits(alien, new String[]{"SHORT", "BULKY"})) {
-            return false;
-        }
-        
-        // If isHumanoid data present, must be true
-        if (alien.hasHumanoidData() && alien.getIsHumanoid() != true) {
-            return false;
-        }
-        
-        // If age present, must be in range
-        if (alien.hasAgeData() && (alien.getAge() < 0 || alien.getAge() > 200)) {
-            return false;
-        }
-        
-        return true;
-    }
-    
-    // Helper method to check if alien has all required traits
-    private boolean hasTraits(AlienSpecies alien, String[] requiredTraits) {
+
+    private boolean hasTrait(AlienSpecies alien, String trait) {
         if (!alien.hasTraitsData()) {
             return false;
         }
-        
-        List<String> traits = alien.getPhysicalTraits();
-        for (String required : requiredTraits) {
-            if (!traits.contains(required)) {
-                return false;
-            }
-        }
-        return true;
-    }
-    
-    // Helper method to check if alien has EXACTLY the required traits (no more, no less)
-    private boolean hasExactTraits(AlienSpecies alien, String[] requiredTraits) {
-        if (!alien.hasTraitsData()) {
-            return false;
-        }
-        
-        List<String> traits = alien.getPhysicalTraits();
-        
-        // Must have exactly the same number of traits
-        if (traits.size() != requiredTraits.length) {
-            return false;
-        }
-        
-        // Must contain all required traits
-        for (String required : requiredTraits) {
-            if (!traits.contains(required)) {
-                return false;
-            }
-        }
-        
-        return true;
+        return alien.getPhysicalTraits().contains(trait);
     }
 }
